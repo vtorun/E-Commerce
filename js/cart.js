@@ -9,7 +9,6 @@ export const addToCart = (event, products) => {
     const exitingItem = cart.find((item) => item.id === productId);
     if (exitingItem) {
       exitingItem.quantity++;
-      
     } else {
       const cartItem = {
         id: product.id,
@@ -20,6 +19,7 @@ export const addToCart = (event, products) => {
       };
       cart.push(cartItem);
     }
+    event.target.textContent = "Added";
     saveToLocalStorage(cart);
   }
 };

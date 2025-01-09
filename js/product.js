@@ -26,7 +26,7 @@ export const renderProducts = (products,addToCartCallBack) => {
           <div class="product-info">
             <h2 class="product-title">${product.title}</h2>
             <p class="product-price">$${product.price}</p>
-            <a href="#" class="add-to-cart" data-id='${product.id}'>add to cart</a>
+            <a class="add-to-cart" data-id='${product.id}'>add to cart</a>
           </div>
         </div>
         `
