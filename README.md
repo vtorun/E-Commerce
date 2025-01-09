@@ -13,10 +13,10 @@ Automatic calculation of the total price.
 # Responsive Design
 The website features a responsive design to ensure proper display on mobile devices.
 # Technologies
-HTML5: Used for the structural elements of the page.
-CSS3 & SCSS: Used for the styling and design of the page.
-JavaScript (ES6): Used for dynamic content management and interactive functionalities.
-JSON: Used to dynamically load product data.
+- HTML5: Used for the structural elements of the page.
+- CSS3 & SCSS: Used for the styling and design of the page.
+- JavaScript (ES6): Used for dynamic content management and interactive functionalities.
+- JSON: Used to dynamically load product data.
 
 # Preview
 ![E-Commerce](https://github.com/user-attachments/assets/b9b63ada-acd7-42ee-b954-087d362bb4d1)
