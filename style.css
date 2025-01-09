@@ -1,7 +1,5 @@
+/* Google Fonts */
 @import url("https://fonts.googleapis.com/css2?family=Big+Shoulders+Text:wght@100..900&display=swap");
-
-/* * Css Reset */
-
 * {
   margin: 0;
   padding: 0;
@@ -10,7 +8,6 @@
   list-style: none;
 }
 
-/* Css Tanımlamalar */
 :root {
   --main-color: #273ea1;
   --text-color: #000;
@@ -24,11 +21,14 @@ body {
   background-color: var(--bg-color);
   color: var(--text-color);
 }
+
 .container {
   max-width: 1070px;
   width: 100%;
   margin: auto;
 }
+/*Header*/
+
 header {
   position: fixed;
   top: 0;
@@ -37,6 +37,7 @@ header {
   z-index: 1000;
   background-color: var(--header-color);
 }
+
 .nav {
   display: flex;
   align-items: center;
@@ -49,32 +50,37 @@ header {
   cursor: pointer;
   display: none;
 }
+
 .logo {
   font-size: 24px;
   color: var(--main-color);
   font-weight: 700;
 }
+
 .navbar {
   display: flex;
   align-items: center;
   column-gap: 16px;
 }
+
 .nav-link {
   color: var(--main-color);
   font-size: 17px;
   font-weight: 700;
 }
+
 #cart-icon {
   font-size: 29px;
   color: var(--main-color);
   cursor: pointer;
   position: relative;
 }
+
 .bxs-shopping-bag {
   position: relative;
-  font-size: 29px;
 }
 .bxs-shopping-bag::after {
+  /* Html'de data-quantity attribute üne erişip stillendirdik. */
   content: attr(data-quantity);
   position: absolute;
   top: 0;
@@ -90,7 +96,52 @@ header {
   font-size: 13px;
   font-weight: 500;
 }
-/*Home*/
+/* Footer */
+footer {
+  background-color: var(--main-color);
+  margin-top: 50px;
+  padding: 40px 10px;
+}
+.footer-c {
+  display: grid;
+  grid-template-columns: 60% 20% 20%;
+  gap: 16px;
+}
+
+.footer-box {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-box h2 {
+  font-size: 128px;
+  color: var(--bg-color);
+}
+
+.social {
+  display: flex;
+  align-items: center;
+  column-gap: 16px;
+}
+.social i {
+  background-color: var(--bg-color);
+  font-size: 20px;
+  padding: 10px;
+  color: var(--main-color);
+  border-radius: 50%;
+}
+.footer-box h3 {
+  color: var(--bg-color);
+}
+.footer-box a {
+  color: var(--bg-color);
+  padding-top: 30px;
+}
+.copyright {
+  color: var(--bg-color);
+  padding-top: 30px;
+}
+/* * Home */
 .home {
   position: relative;
   background-color: var(--header-color);
@@ -121,7 +172,7 @@ header {
   color: var(--main-color);
   font-weight: 900;
 }
-/*Product*/
+
 .heading {
   text-align: center;
   font-size: 64px;
@@ -162,13 +213,13 @@ header {
   padding: 10px;
   text-align: center;
   letter-spacing: 1px;
-  margin-top: 25px;
+  margin-top: 45px;
   cursor: pointer;
   border: none;
   outline: none;
 }
 
-/* ! Cart Sayfası */
+/* Cart */
 .cart-container {
   margin-top: 115px !important;
 }
@@ -262,14 +313,15 @@ header {
   letter-spacing: 1.7;
   text-align: center;
 }
-/*Responsive*/
+/* Responsive Tasarım */
+
 @media (max-width: 1200px) {
   .container {
     width: 90%;
     margin: 0 auto;
   }
   .home-img::before {
-    top: -55px;
+    top: -35px;
     font-size: 128px;
   }
   .product-container {
@@ -294,7 +346,7 @@ header {
   }
   .home-img::before {
     font-size: 80px;
-    top: -30px;
+    top: -40px;
   }
   .cart-box {
     grid-template-columns: 1fr;
@@ -325,7 +377,6 @@ header {
     clip-path: circle(0% at 0% 0%);
     transition: all 0.5s;
   }
-  /* Clipt-path - Html elemanlarının belirli kısımlarını görünür kılmak için kullanılır. */
   .nav-link {
     display: block;
     padding: 15px;
@@ -335,9 +386,5 @@ header {
   }
   .product-container {
     grid-template-columns: repeat(2, 1fr);
-  }
-  .home-img::before {
-    font-size: 65px;
-    top: -20px;
   }
 }

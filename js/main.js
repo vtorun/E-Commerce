@@ -1,25 +1,34 @@
-import { addToCart } from "./cart.js";
+import { addToCart, displayCartTotal, renderCartItems } from "./cart.js";
 import { fetchProducts, renderProducts } from "./product.js";
+import { getFromLocalStorage, updateCartIcon } from "./utils.js";
 
-//menu butonuna ve navbara erişim.
 const menuIcon = document.querySelector("#menu-icon");
 const menu = document.querySelector(".navbar");
 
-//menu iconuna tıklayınca navbara class ekleme
 menuIcon.addEventListener("click", () => {
   menu.classList.toggle("open-menu");
 });
 
-//hangi sayfada olduğumuzu kontrol edip, ona göre api ye sayfa yüklenirken istek atıyoruz.
+// Ürünleri ana sayfadayken api'dan almalıyız.Bunun için window.location ile tarayıcı path 'ini izleyip karar veririz.
 document.addEventListener("DOMContentLoaded", async () => {
+  // Sepet verisine eriş
+  let cart = getFromLocalStorage();
+
+  // Tarayıcıda hangi sayfadayız
   if (window.location.pathname.includes("cart.html")) {
-    console.log("Cart sayfasındasınız");
+    renderCartItems();
+    displayCartTotal();
   } else {
+    console.log(`Ana Sayfa`);
     const product = await fetchProducts();
-    //render fonksiyonunu çalıştır. api den gelen veriyi bağla
+    //Api'dan gelen veriye bağlı olarak ekrana cart render ettik
     renderProducts(product, (event) => {
-      //debugger;
       addToCart(event, product);
     });
   }
+
+  // Sepet Iconunu güncelle
+  updateCartIcon(cart);
 });
+
+
